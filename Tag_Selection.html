@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>Tag Selection</title>
+    <style type="text/css">
+        .title {
+            color: blue;
+            font-size: 36px;
+            text-align: center;
+        }
+        .frame {
+            width:1000px;
+            margin: 0px auto;
+        }
+        .box {
+            width:330px;
+            display:inline-block;
+            background-color:lightblue;
+            text-align: center;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        .interests, .movie, .food  {
+            margin: 0 auto;
+            width: 200px;
+            display: none;
+        }
+    </style>
+    <script>
+        function change(choice) {
+            let i = document.getElementById("id_i");
+            let m = document.getElementById("id_m");
+            let f = document.getElementById("id_f");
+            let s_i = document.getElementById("id_s_i");
+            let s_m = document.getElementById("id_s_m");
+            let s_f = document.getElementById("id_s_f");
+            if (choice==0) {
+                i.style.display="block";
+                m.style.display="none";
+                f.style.display="none";
+                s_i.style.fontWeight="bold";
+                s_m.style.fontWeight="normal";
+                s_f.style.fontWeight="normal";
+            } else if(choice==1) {
+                i.style.display="none";
+                m.style.display="block";
+                f.style.display="none";
+                s_i.style.fontWeight="normal";
+                s_m.style.fontWeight="bold";
+                s_f.style.fontWeight="normal";
+            } else if (choice==2) {
+                i.style.display="none";
+                m.style.display="none";
+                f.style.display="block";
+                s_i.style.fontWeight="normal";
+                s_m.style.fontWeight="normal";
+                s_f.style.fontWeight="bold";
+            } 
+        }
+    </script>
+</head>
+<body>
+    <div class="title">我的自我簡介</div>
+    <div class="frame">
+        <div class="box"><span onclick=change(0); id=id_s_i>我的興趣</span></div>
+        <div class="box"><span onclick=change(1); id=id_s_m>我喜歡的電影</span></div>
+        <div class="box"><span onclick=change(2); id=id_s_f>我喜歡的食物</span></div>
+    </div>
+    <div class="interests" id="id_i">
+        <ul>
+            <li>打籃球</li>
+            <li>學新的東西</li>
+            <li>打電動</li>
+        </ul>
+    </div> 
+    <div class="movie" id="id_m">
+        <ul>
+            <li>阿甘正傳</li>
+            <li>魔戒</li>
+            <li>星際穿越</li>
+        </ul>
+    </div> 
+    <div class="food" id="id_f">
+        <ul>
+            <li>義大利麵</li>
+            <li>乳酪蛋糕</li>
+            <li>肉燥飯</li>
+        </ul>
+    </div> 
+</body>
+</html>
